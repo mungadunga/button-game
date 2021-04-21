@@ -1,2 +1,3 @@
-# button-game
- 
+# Button Clicking Game
+
+Have fun!

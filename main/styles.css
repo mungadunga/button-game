@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+body {
+    /*   font-family: 'Multi', sans-serif; */
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 1em;
+}
+button {
+    appearance: none;
+    border-radius: 0px;
+    outline: none;
+    background-color: white;
+    border: 2px solid black;
+    padding: 0.5em 1.5em;
+}
+button:hover {
+    cursor:pointer;
+    background-color: rgb(216, 216, 216);
+}
+.ButtonC-container-title {
+    margin: 30px;
+}
+.ButtonC, .BoostersC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+}
+.ButtonC-container, .BoostersC-container{
+    display: inline-block;
+    border: 5px solid black;
+    text-align: center;
+    width: 80%;
+    padding: 10vh 0;
+}
+.ButtonC-container {
+    padding: 32.5vh 0;
+    margin-bottom: 10vh;
+}
+.Stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.Stats-stat {
+    margin: 1em 0.4em;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: row;
+}
+.Stats-stat-num {
+    position: relative;
+    margin-left: 0.5em;
+    color: rgb(63, 141, 63);
+
+}
+#Stats-stat-cash {
+    display: flex;
+    flex-direction: column;
+}
+.ButtonC-popupContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ButtonC-popupDiv {
+    position: absolute;
+}
+.ButtonC-popup {
+    position: relative;
+    transform: rotate(-24.5deg);
+    font-size: 2em;
+    animation-name: slidIn;
+    animation-duration: 500ms;
+    color:rgb(63, 141, 63, 0);
+}
+@keyframes slidIn {
+    0% {
+        color: rgb(63, 141, 63);
+        top: 0;
+    }
+    50% {
+        color: rgb(63, 141, 63, 0.5);
+    }
+    100% {
+        color: rgb(63, 141, 63, 0);
+        top: -50px;
+    }
+}
+.BoostersC-Booster1 {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    margin: 1em;
+    border-left: 5px solid green;
+    padding-left: 1em;
+    padding-top: -50px;
+}
+.BoostersC-title {
+    margin-bottom: 2em;
+}
+.BoostersC-Booster1-cat {
+    margin: 0.4em;
+}
