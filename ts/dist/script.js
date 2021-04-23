@@ -1,4 +1,3 @@
-/// <reference path="./interfaces.d.ts" /> 
 class Stats extends React.Component {
     constructor(props) {
         super(props);
@@ -25,7 +24,8 @@ class Button extends React.Component {
             React.createElement("div", { className: "ButtonC-container" },
                 React.createElement("div", { className: "ButtonC-popupContainer" }),
                 React.createElement("br", null),
-                React.createElement("h1", { className: "ButtonC-container-title" }, "Button Clicker Game"),
+                React.createElement("div", { className: "ButtonC-container-title" },
+                    React.createElement("h1", null, "Button Clicker Game")),
                 React.createElement("button", { className: "ButtonC-container-button" }, "Click me!"))));
     }
 }
@@ -37,7 +37,8 @@ class Boosters extends React.Component {
     render() {
         return (React.createElement("div", { className: "BoostersC" },
             React.createElement("div", { className: "BoostersC-container" },
-                React.createElement("h1", { className: "BoostersC-title" }, "Boosters"),
+                React.createElement("div", { className: "BoostersC-title" },
+                    React.createElement("h1", null, "Boosters")),
                 React.createElement("div", null,
                     React.createElement(Booster1, null),
                     React.createElement(Booster2, null)))));
@@ -48,13 +49,13 @@ class Booster1 extends React.Component {
         super(props);
     }
     render() {
-        return (React.createElement("div", { className: "BoostersC-Booster", id: "BoostersC-Booster1" },
-            React.createElement("h1", { className: "BoostersC-Booster-cat", id: "BoostersC-Booster1-cat" }, "+1 multiplier"),
-            React.createElement("p", { className: "BoostersC-Booster-cat", id: "BoostersC-Booster1-cat" },
+        return (React.createElement("div", { id: "BoostersC-Booster1" },
+            React.createElement("h1", { id: "BoostersC-Booster1-cat" }, "+1 multiplier"),
+            React.createElement("p", { id: "BoostersC-Booster1-cat" },
                 "Cost: ",
                 React.createElement("span", { className: "BoostersC-Booster1-cost" }, "100"),
                 " cash"),
-            React.createElement("button", { className: "BoostersC-Booster-button BoostersC-Booster-cat BoostersC-Booster1-cat", id: "BoostersC-Booster1-button" }, "Buy")));
+            React.createElement("button", { className: "BoostersC-Booster1-cat", id: "BoostersC-Booster1-button" }, "Buy")));
     }
 }
 class Booster2 extends React.Component {
@@ -62,16 +63,16 @@ class Booster2 extends React.Component {
         super(props);
     }
     render() {
-        return (React.createElement("div", { className: "BoostersC-Booster", id: "BoostersC-Booster2" },
-            React.createElement("h1", { className: "BoostersC-Booster-cat", id: "BoostersC-Booster2-cat" }, "x2 cash for 10 seconds"),
-            React.createElement("p", { className: "BoostersC-Booster-cat", id: "BoostersC-Booster2-cat" },
+        return (React.createElement("div", { id: "BoostersC-Booster2" },
+            React.createElement("h1", { id: "BoostersC-Booster2-cat" }, "x2 cash for 10 seconds"),
+            React.createElement("p", { id: "BoostersC-Booster2-cat" },
                 "Cost: ",
                 React.createElement("span", { className: "BoostersC-Booster2-cost" }, "100"),
                 " cash"),
-            React.createElement("button", { className: "BoostersC-Booster-button BoostersC-Booster-cat BoostersC-Booster2-cat", id: "BoostersC-Booster2-button" }, "Buy")));
+            React.createElement("button", { className: "BoostersC-Booster2-cat", id: "BoostersC-Booster2-button" }, "Buy")));
     }
 }
-// SHOP
+// APP
 class App extends React.Component {
     constructor() {
         super(...arguments);

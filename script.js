@@ -1,16 +1,21 @@
-import { nFormatter } from "./material.js";
+import { nFormatter, localSet, reverseFormat, styleEffect, cashCheck } from "./material.js";
 
-
+// SETUP
 const $ = document.querySelector.bind(document);
 
-let cash = 0;
-let multi = 1;
-let clicks = 0;
+let cash;
+let multi;
+let clicks;
+
+if(localStorage.getItem("cash")) cash = Number(localStorage.getItem("cash"))
+else localSet();
+if(localStorage.getItem("multi")) multi = Number(localStorage.getItem("multi"))
+else localSet();
+if(localStorage.getItem("clicks")) clicks = Number(localStorage.getItem("clicks"))
+else localSet();
 
 $(".BoostersC-Booster1-cost").textContent = nFormatter(multi * 10);
 $(".BoostersC-Booster2-cost").textContent = nFormatter(multi * 100);
-
-
 
 
 // BOOSTERS
@@ -18,11 +23,14 @@ const refresh = () => {
    $("#cash").textContent = nFormatter(cash);
    $("#multi").textContent = nFormatter(multi);
    $("#clicks").textContent = nFormatter(clicks);
+   localStorage.setItem("cash", cash);
+   localStorage.setItem("multi", multi);
+   localStorage.setItem("clicks", clicks);
 };
 
-// main button onClick
+// main button
 $(".ButtonC-container-button").addEventListener("click", e => {
-   // stats
+   // math
    cash += multi;
    clicks++;
    refresh();
@@ -30,48 +38,54 @@ $(".ButtonC-container-button").addEventListener("click", e => {
    let randomNum = Math.random() * 45 - 24.5;
    const div = document.createElement("DIV");
    div.classList.add("ButtonC-popupDiv");
-
+   // popup onclick
    const p = document.createElement("P");
    p.classList.add("ButtonC-popup");
-   p.textContent = `+${multi}`;
+   p.textContent = `+${nFormatter(multi)}`;
    p.style.transform = `rotate(${randomNum}deg)`;
    div.appendChild(p);
-   
+   // delete div after 500ms
    $(".ButtonC-popupContainer").appendChild(div);
    setTimeout(() => div.remove(), 500);
 });
 
 // BOOSTERS
-export const cashCheck = (cost, doStuff) => {
-   if(cash < cost) alert("Not enough cash!");
-   else doStuff();
-}
 
-// +1 multiplier
+// +1 multiplier booster
 $("#BoostersC-Booster1-button").addEventListener("click", e => {
-   let cost = Number($(".BoostersC-Booster1-cost").textContent);
-   function doStuff(){
+   let cost = reverseFormat($(".BoostersC-Booster1-cost").textContent);
+   const doStuff = () => {
+      // math and displaying abreviated num 
       cash -= cost;
       multi++;
-      $(".BoostersC-Booster1-cost").textContent = multi * 10;
+      $(".BoostersC-Booster1-cost").textContent = nFormatter(multi * 10);
+      // style effect
+      // $("#BoostersC-Booster1").style.borderLeft = "10px solid green";
+      // setTimeout(() => $("#BoostersC-Booster1").style.borderLeft = "5px solid green", 100);
+      styleEffect("#BoostersC-Booster1");
+      // refresh
       refresh();
    }
-   cashCheck(cost, doStuff);
+   cashCheck(cash, cost, doStuff);
 });
 
-// x2 cash for 10 seconds
+// x2 cash for 10 seconds booster
 $("#BoostersC-Booster2-button").addEventListener("click", e => {
-   let cost = Number($(".BoostersC-Booster2-cost").textContent);
-   function doStuff(){
+   let cost = reverseFormat($(".BoostersC-Booster2-cost").textContent);
+   const doStuff = () => {
       cash -= cost;
       multi *= 2;
       setTimeout(() => {
          multi /= 2;
          refresh();
       }, 10000);
-      $(".BoostersC-Booster2-cost").textContent = multi * 50;
+      $(".BoostersC-Booster2-cost").textContent = nFormatter(multi * 50);
       refresh();
    }
-   cashCheck(cost, doStuff);
+   cashCheck(cash, cost, doStuff);
+   // style effect
+   styleEffect("#BoostersC-Booster2");
 });
+
+
 

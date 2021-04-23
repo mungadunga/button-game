@@ -1,3 +1,7 @@
+:root {
+    --main: rgb(111, 136, 111);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,17 +23,21 @@ button {
 }
 button:hover {
     cursor:pointer;
-    background-color: rgb(216, 216, 216);
+    background-color: rgb(200, 189, 189);
 }
-.ButtonC-container-title {
-    margin: 30px;
+.ButtonC-container-title { margin: 30px; }
+.ButtonC-container-title h1 {
+    display: inline-block;
+    border-bottom: 5px solid var(--main);
 }
 .ButtonC, .BoostersC {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
-
+}
+.BoostersC-container {
+    box-shadow: 10px 10px 0px 0px var(--main);
 }
 .ButtonC-container, .BoostersC-container{
     display: inline-block;
@@ -39,13 +47,34 @@ button:hover {
     padding: 10vh 0;
 }
 .ButtonC-container {
-    padding: 32.5vh 0;
-    margin-bottom: 10vh;
+    padding: 32vh 0;
+    margin: 10vh 0;
+    box-shadow: 10px 10px 0px 0px var(--main);
 }
+/* mobile  */
+@media(max-width: 418px){
+    .ButtonC-container {
+        padding: 30vh 0;
+    }
+}
+/* galaxy fold */
+@media(max-width: 294px){
+    .ButtonC-container {
+        padding: 25vh 0;
+    }
+    .Stats-stat {
+        font-size: 0.6em;
+    }
+} 
+
 .Stats {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    position:fixed;
+    background: rgb(255, 255, 255);
+    width: 100%;
+    border-bottom: 5px solid var(--main);
 }
 .Stats-stat {
     margin: 1em 0.4em;
@@ -88,7 +117,7 @@ button:hover {
         top: -50px;
     }
 }
-.BoostersC-Booster {
+#BoostersC-Booster1, #BoostersC-Booster2 {
     display: flex;
     justify-content: start;
     align-items: start;
@@ -97,10 +126,16 @@ button:hover {
     border-left: 5px solid green;
     padding-left: 1em;
     padding-top: -50px;
+    transition: 100ms;
 }
 .BoostersC-title {
     margin-bottom: 2em;
 }
-.BoostersC-Booster-cat {
+.BoostersC-title h1 {
+    display: inline-block;
+    border-bottom: 5px solid var(--main);
+}
+#BoostersC-Booster1-cat, #BoostersC-Booster2-cat {
     margin: 0.4em;
+    text-align: start;
 }

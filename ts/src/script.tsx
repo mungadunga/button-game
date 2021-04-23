@@ -25,7 +25,9 @@ class Button extends React.Component {
             <div className="ButtonC-container">
                <div className="ButtonC-popupContainer"></div>
                <br/>
-               <h1 className="ButtonC-container-title">Button Clicker Game</h1>
+               <div className="ButtonC-container-title">
+                  <h1>Button Clicker Game</h1>
+               </div>
                <button className="ButtonC-container-button">Click me!</button>
             </div>
          </div>
@@ -43,7 +45,9 @@ class Boosters extends React.Component {
       return (
          <div className="BoostersC">
             <div className="BoostersC-container">
-               <h1 className="BoostersC-title">Boosters</h1>
+               <div className="BoostersC-title">
+                  <h1>Boosters</h1>
+               </div>
                <div>
                   <Booster1 />
                   <Booster2 />
@@ -60,10 +64,10 @@ class Booster1 extends React.Component{
    }
    render(){
       return (
-         <div className="BoostersC-Booster" id="BoostersC-Booster1">
-            <h1 className="BoostersC-Booster-cat" id="BoostersC-Booster1-cat">+1 multiplier</h1>
-            <p className="BoostersC-Booster-cat" id="BoostersC-Booster1-cat">Cost: <span className="BoostersC-Booster1-cost">100</span> cash</p>
-            <button className="BoostersC-Booster-button BoostersC-Booster-cat BoostersC-Booster1-cat" id="BoostersC-Booster1-button">Buy</button>
+         <div id="BoostersC-Booster1">
+            <h1 id="BoostersC-Booster1-cat">+1 multiplier</h1>
+            <p id="BoostersC-Booster1-cat">Cost: <span className="BoostersC-Booster1-cost">100</span> cash</p>
+            <button className="BoostersC-Booster1-cat" id="BoostersC-Booster1-button">Buy</button>
          </div>
       )
    }
@@ -75,16 +79,16 @@ class Booster2 extends React.Component {
    }
    render() {
       return (
-         <div className="BoostersC-Booster" id="BoostersC-Booster2">
-            <h1 className="BoostersC-Booster-cat" id="BoostersC-Booster2-cat">x2 cash for 10 seconds</h1>
-            <p className="BoostersC-Booster-cat" id="BoostersC-Booster2-cat">Cost: <span className="BoostersC-Booster2-cost">100</span> cash</p>
-            <button className="BoostersC-Booster-button BoostersC-Booster-cat BoostersC-Booster2-cat" id="BoostersC-Booster2-button">Buy</button>
+         <div id="BoostersC-Booster2">
+            <h1 id="BoostersC-Booster2-cat">x2 cash for 10 seconds</h1>
+            <p id="BoostersC-Booster2-cat">Cost: <span className="BoostersC-Booster2-cost">100</span> cash</p>
+            <button className="BoostersC-Booster2-cat" id="BoostersC-Booster2-button">Buy</button>
          </div>
       )
    }
 }
 
-// SHOP
+// APP
       
 class App extends React.Component {
    stats: statsInterface = {
