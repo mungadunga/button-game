@@ -17,10 +17,6 @@ else localSet(cash, multi, clicks);
 $(".BoostersC-Booster1-cost").textContent = nFormatter(multi * 10);
 $(".BoostersC-Booster2-cost").textContent = nFormatter(multi * 100);
 
-cash = 0;
-clicks = 0;
-multi = 1;
-
 
 // BOOSTERS
 const refresh = () => {
@@ -64,8 +60,6 @@ $("#BoostersC-Booster1-button").addEventListener("click", e => {
       multi++;
       $(".BoostersC-Booster1-cost").textContent = nFormatter(multi * 10);
       // style effect
-      // $("#BoostersC-Booster1").style.borderLeft = "10px solid green";
-      // setTimeout(() => $("#BoostersC-Booster1").style.borderLeft = "5px solid green", 100);
       styleEffect("#BoostersC-Booster1");
       // refresh
       refresh();
@@ -84,11 +78,12 @@ $("#BoostersC-Booster2-button").addEventListener("click", e => {
          refresh();
       }, 10000);
       $(".BoostersC-Booster2-cost").textContent = nFormatter(multi * 50);
+      // style effect
+      styleEffect("#BoostersC-Booster2");
+      // refresh
       refresh();
    }
    cashCheck(cash, cost, doStuff);
-   // style effect
-   styleEffect("#BoostersC-Booster2");
 });
 
 
