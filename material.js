@@ -32,3 +32,9 @@ export const cashCheck = (cash, cost, doStuff) => {
    if(cash < cost) alert("Not enough cash!")
    else doStuff();
 }
+
+
+
+
+
+// e
