@@ -3,9 +3,9 @@ import { nFormatter, localSet, reverseFormat, styleEffect, cashCheck } from "./m
 // SETUP
 const $ = document.querySelector.bind(document);
 
-let cash;
-let multi;
-let clicks;
+let cash = 0;
+let multi = 1;
+let clicks = 0;
 
 if(localStorage.getItem("cash")) cash = Number(localStorage.getItem("cash"))
 else localSet(cash, multi, clicks);
