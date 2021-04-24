@@ -1,4 +1,4 @@
-import { nFormatter, reverseFormat, styleEffect, cashCheck } from "./material.js";
+import { nFormatter, localSet, reverseFormat, styleEffect, cashCheck } from "./material.js";
 
 // SETUP
 const $ = document.querySelector.bind(document);
@@ -7,18 +7,12 @@ let cash;
 let multi;
 let clicks;
 
-const localSet = () => {
-   cash = 0;
-   clicks = 0;
-   multi = 1;
-}
-
 if(localStorage.getItem("cash")) cash = Number(localStorage.getItem("cash"))
-else localSet();
+else localSet(cash, multi, clicks);
 if(localStorage.getItem("multi")) multi = Number(localStorage.getItem("multi"))
-else localSet();
+else localSet(cash, multi, clicks);
 if(localStorage.getItem("clicks")) clicks = Number(localStorage.getItem("clicks"))
-else localSet();
+else localSet(cash, multi, clicks);
 
 $(".BoostersC-Booster1-cost").textContent = nFormatter(multi * 10);
 $(".BoostersC-Booster2-cost").textContent = nFormatter(multi * 100);

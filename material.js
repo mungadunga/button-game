@@ -23,6 +23,12 @@ export const reverseFormat = num => {
    return obj[[...num].pop()] * Number([...num].slice(0, [...num].length - 1).join(""));
 }
 
+export const localSet = (cash, multi, clicks) => {
+   cash = 0;
+   multi = 1;
+   clicks = 0;
+}
+
 export const styleEffect = selec => {
    document.querySelector(selec).style.borderLeft = "10px solid green";
    setTimeout(() => document.querySelector(selec).style.borderLeft = "5px solid green", 100);
@@ -32,9 +38,3 @@ export const cashCheck = (cash, cost, doStuff) => {
    if(cash < cost) alert("Not enough cash!")
    else doStuff();
 }
-
-
-
-
-
-// e
