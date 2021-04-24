@@ -9,8 +9,8 @@ let clicks;
 
 const localSet = () => {
    cash = 0;
-   clicks = 1;
-   multi = 0;
+   clicks = 0;
+   multi = 1;
 }
 
 if(localStorage.getItem("cash")) cash = Number(localStorage.getItem("cash"))
