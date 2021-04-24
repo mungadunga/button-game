@@ -3,9 +3,9 @@ import { nFormatter, localSet, reverseFormat, styleEffect, cashCheck } from "./m
 // SETUP
 const $ = document.querySelector.bind(document);
 
-let cash = 0;
-let multi = 1;
-let clicks = 0;
+let cash;
+let multi;
+let clicks;
 
 if(localStorage.getItem("cash")) cash = Number(localStorage.getItem("cash"))
 else localSet(cash, multi, clicks);
@@ -16,6 +16,10 @@ else localSet(cash, multi, clicks);
 
 $(".BoostersC-Booster1-cost").textContent = nFormatter(multi * 10);
 $(".BoostersC-Booster2-cost").textContent = nFormatter(multi * 100);
+
+cash = 0;
+clicks = 0;
+multi = 1;
 
 
 // BOOSTERS
