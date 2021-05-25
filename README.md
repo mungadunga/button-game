@@ -1,5 +1,3 @@
 # Button Game
 
-This game is available online: https://mungadunga.github.io/button-game/
-
-Have Fun!
+This game is broken please do not use it.
